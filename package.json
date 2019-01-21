@@ -1,0 +1,24 @@
+{
+    "name": "pwndmail",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "bin": {
+        "pwndmail": "./index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Stev07/NodeJS_CLI_Tool.git"
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "chalk": "^2.4.2",
+        "email-validator": "^2.0.4",
+        "figlet": "^1.2.1",
+        "ora": "^3.0.0",
+        "prompt": "^1.0.0"
+    }
+}
