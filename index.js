@@ -17,7 +17,7 @@ const [,, ...args] = process.argv;
 
 
 if (validator.validate(`${args}`) == true){ //Vérification de l'email avec Validator
-    console.log(chalk.bold(`${args} is valid.\n\n`));
+    console.log(chalk.bold(`${args} is a valid email.\n\n`));
 
     let spinner = ora(`Looking for breaches from ${args} \n`)//Déclaration du spinner
 
@@ -35,18 +35,19 @@ if (validator.validate(`${args}`) == true){ //Vérification de l'email avec Vali
         headers: {
         'User-Agent': 'pwndmail'
         },
-    }).then(res => { 
+    }).then(res => {// Bon déroulement de la requête
         spinner.succeed("Loading done \n")
-        console.log(chalk.bold.underline.bgRed("You've been powned by:\n"))
+        
 
-
+        console.log(chalk.bold.underline.bgRed("You've been pwned by:\n"))
 
         res.data.forEach(function (breach){
             console.log(chalk.bold(`- ${breach.Name}`))
             console.log(`  ${breach.Domain}`)
+            console.log(`  ${breach.BreachDate}\n\n`)
         })
-
-        console.log(chalk.bold("\n\nCoded By StevOx"))
+        console.log(chalk.yellow("_________________________________"))
+        console.log(chalk.bold("\nCoded By Steve Dossin"))
         
 //En cas d'erreur ...
     }).catch(err => {
