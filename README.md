@@ -18,4 +18,4 @@ pwndmail is an email breach checker.
 
 
 ### Author
-Steve Dossin for **[Becode](www.becode.org)**
+Steve Dossin for **[Becode](https://www.becode.org/)**
