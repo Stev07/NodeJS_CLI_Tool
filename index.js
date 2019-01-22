@@ -7,7 +7,7 @@ var chalk = require('chalk');//COLORS
 const ora = require('ora');//SPINNER
 
 //Afficher Mail-checker @ BECODE avec FIGLET
-console.log(chalk.yellow(figlet.textSync('Mail-checker @ BECODE \n', {
+console.log(chalk.yellow(figlet.textSync('Mail-checker @ BECODE.ORG \n', {
     horizontalLayout: 'default',
     verticalLayout: 'default'
 })));
@@ -36,8 +36,7 @@ if (validator.validate(`${args}`) == true){ //Vérification de l'email avec Vali
         'User-Agent': 'pwndmail'
         },
     }).then(res => { 
-        spinner.stop()
-        spinner.clear()
+        spinner.succeed("Loading done \n")
         console.log(chalk.bold.underline.bgRed("You've been powned by:\n"))
 
 
@@ -47,12 +46,12 @@ if (validator.validate(`${args}`) == true){ //Vérification de l'email avec Vali
             console.log(`  ${breach.Domain}`)
         })
 
+        console.log(chalk.bold("\n\nCoded By StevOx"))
         
 //En cas d'erreur ...
     }).catch(err => {
         const log = chalk.yellow(err)
-        spinner.stop()
-        spinner.clear()
+        spinner.succeed("Loading done")
  });
 
 }else{
