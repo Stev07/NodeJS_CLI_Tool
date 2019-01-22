@@ -7,21 +7,15 @@ var chalk = require('chalk');//COLORS
 const ora = require('ora');//SPINNER
 
 
-chalk.green(figlet('Mail-checker @ BECODE \n', function(err, data) {
-    if (err) {
-        console.log('Something went wrong...');
-        console.dir(err);
-        return;
-    }
-    console.log(data)
-    console.log("\n")
-}))
-
+console.log(chalk.yellow(figlet.textSync('Mail-checker @ BECODE \n', {
+    horizontalLayout: 'default',
+    verticalLayout: 'default'
+})));
 
 const [,, ...args] = process.argv;
 
 if (validator.validate(`${args}`) == true){
-    console.log(chalk.bold(`${args} is valid.`));
+    console.log(chalk.bold(`${args} is valid.\n\n`));
 
     let spinner = ora(`Looking for breaches from ${args} \n`)
 
@@ -42,12 +36,12 @@ if (validator.validate(`${args}`) == true){
     }).then(res => { 
         spinner.stop()
         spinner.clear()
-        console.log(chalk.bold.bgRed("You've been powned by"))
+        console.log(chalk.bold.underline.bgRed("You've been powned by:\n"))
 
 
 
         res.data.forEach(function (breach){
-            console.log(`- ${breach.Name}`)
+            console.log(chalk.bold(`- ${breach.Name}`))
             console.log(`  ${breach.Domain}`)
         })
 
