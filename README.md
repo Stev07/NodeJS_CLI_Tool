@@ -10,11 +10,11 @@ pwndmail is an email breach checker.
 [Have I been pwned?](https://haveibeenpwned.com/API/v2 "Have I been pwned")
 
 ## Packages
-Validator
-Axios
-Figlet
-Chalk
-Ora
+* Validator
+* Axios
+* Figlet
+* Chalk
+* Ora
 
 
 ### Author
