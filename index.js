@@ -6,18 +6,20 @@ var figlet = require('figlet');//ASCII
 var chalk = require('chalk');//COLORS
 const ora = require('ora');//SPINNER
 
-
+//Afficher Mail-checker @ BECODE avec FIGLET
 console.log(chalk.yellow(figlet.textSync('Mail-checker @ BECODE \n', {
     horizontalLayout: 'default',
     verticalLayout: 'default'
 })));
 
+//Déclaration de l'argument (email)
 const [,, ...args] = process.argv;
 
-if (validator.validate(`${args}`) == true){
+
+if (validator.validate(`${args}`) == true){ //Vérification de l'email avec Validator
     console.log(chalk.bold(`${args} is valid.\n\n`));
 
-    let spinner = ora(`Looking for breaches from ${args} \n`)
+    let spinner = ora(`Looking for breaches from ${args} \n`)//Déclaration du spinner
 
     spinner.start()
 
@@ -26,7 +28,7 @@ if (validator.validate(`${args}`) == true){
     })
 
 
-
+//Requête axios afin de get les datas
     axios({
         method: 'get',
         url: `https://haveibeenpwned.com/api/v2/breachedaccount/${args}`,
@@ -46,7 +48,7 @@ if (validator.validate(`${args}`) == true){
         })
 
         
-        
+//En cas d'erreur ...
     }).catch(err => {
         const log = chalk.yellow(err)
         spinner.stop()
