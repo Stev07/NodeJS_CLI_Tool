@@ -1,15 +1,15 @@
 # NodeJS_CLI_Tool
 pwndmail is an email breach checker.
 
-##Install
+## Install
 ``$npm i -g pwndmail``
 
-##How to use it
+## How to use it
 ``$ pwndmail email@to.check``
-##API
+## API
 [Have I been pwned?](https://haveibeenpwned.com/API/v2 "Have I been pwned")
 
-##Packages
+## Packages
 Validator
 Axios
 Figlet
@@ -17,5 +17,5 @@ Chalk
 Ora
 
 
-###Author
+### Author
 Steve Dossin for **Becode**.
