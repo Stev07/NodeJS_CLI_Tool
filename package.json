@@ -1,8 +1,8 @@
 {
     "name": "pwndmail",
+    "description": "mail pwned checker",
     "version": "1.0.0",
     "main": "index.js",
-    "license": "MIT",
     "scripts": {
         "start": "node index.js"
     },
@@ -20,5 +20,7 @@
         "figlet": "^1.2.1",
         "ora": "^3.0.0",
         "prompt": "^1.0.0"
-    }
+    },
+    "author": "Steve Dossin <steve.dossin@gmail.com>",
+    "license": "MIT"
 }

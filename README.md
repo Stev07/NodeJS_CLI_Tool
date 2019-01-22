@@ -2,7 +2,7 @@
 pwndmail is an email breach checker.
 
 ## Install
-``$npm i -g pwndmail``
+``$ npm i -g pwndmail``
 
 ## How to use it
 ``$ pwndmail email@to.check``
@@ -18,4 +18,4 @@ pwndmail is an email breach checker.
 
 
 ### Author
-Steve Dossin for **Becode**.
+Steve Dossin for **[Becode](www.becode.org)**
