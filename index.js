@@ -51,10 +51,13 @@ if (validator.validate(`${args}`) == true){ //Vérification de l'email avec Vali
         
 //En cas d'erreur ...
     }).catch(err => {
-        const log = chalk.yellow(err)
-        spinner.succeed("Loading done")
+        spinner.succeed("Loading done \n")
+        if (err.response.status == 404) {
+            console.log(chalk.green.bold("  Your email is safe!"));
+        } else if (err.response.status == 403) {
+            console.log(chalk.red('Api Error'));
+        }
  });
-
 }else{
     console.log(`!!! ${args} is invalid.`)
 }
